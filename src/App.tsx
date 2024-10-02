@@ -1,11 +1,12 @@
-
+import { Button } from "./components/ui/button";
 
 export function App() {
 
   return (
-    <>
-      Pizza Shop
-    </>
+    <div className="flex justify-center items-center h-screen">
+
+      <Button>Enviar</Button>
+    </div>
   )
 }
 
