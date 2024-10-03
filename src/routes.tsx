@@ -4,14 +4,22 @@ import {
 } from "react-router-dom";
 import { Dashboard } from "./pages/app/dashboard";
 import { SingIn } from "./pages/auth/sing-in";
+import { AppLayout } from "./pages/_layouts/app";
+import { AuthLayout } from "./pages/_layouts/auth";
 
 export const router = createBrowserRouter([
     {
         path: "/",
-        element: <Dashboard />,
+        element: <AppLayout />,
+        children: [
+            { path: "/", element: <Dashboard /> }
+        ]
     },
     {
-        path: "/sing-in",
-        element: <SingIn />,
-    },
+        path: "/",
+        element: <AuthLayout />,
+        children: [
+            { path: "/sing-in", element: <SingIn /> }
+        ]
+    }
 ]);
