@@ -1,3 +1,4 @@
+import { Helmet, HelmetProvider } from "react-helmet-async";
 import { Button } from "./components/ui/button";
 import { router } from "./routes";
 import {
@@ -8,7 +9,10 @@ import {
 export function App() {
 
   return (
-    <RouterProvider router={router} />
+    <HelmetProvider>
+      <Helmet titleTemplate="%s | pizza.shop" />
+      <RouterProvider router={router} />
+    </HelmetProvider>
   )
 }
 

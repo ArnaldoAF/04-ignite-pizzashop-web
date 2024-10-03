@@ -1,5 +1,10 @@
+import { Helmet, HelmetProvider } from "react-helmet-async";
+
 export function SingIn() {
     return (
-        <h1>Dashboard</h1>
+        <>
+            <Helmet title="Login" />
+            <h1>Dashboard</h1>
+        </>
     )
 }
