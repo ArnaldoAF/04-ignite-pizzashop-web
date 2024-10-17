@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { z } from 'zod';
+import { Toaster, toast } from 'sonner'
 
 
 const singInForm = z.object({
@@ -18,6 +19,13 @@ export function SingIn() {
 
     async function handleSingIn(data: SingInForm) {
         await new Promise((resolve) => setTimeout(resolve, 200))
+        toast.success("link enviado ", {
+            action: {
+                label: "reenviar",
+                onClick: () =>
+                    handleSingIn(data)
+            }
+        })
     }
 
 
