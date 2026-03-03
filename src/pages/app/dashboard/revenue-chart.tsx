@@ -38,7 +38,7 @@ export default function RevenueChart() {
                             fontSize: 12
                         }}
                         data={data}>
-                        {/* <CartesianGrid strokeDasharray="3 3" /> */}
+                        <CartesianGrid vertical={false} className='stroke-muted' />
                         <YAxis
                             stroke="#888"
                             axisLine={false}
